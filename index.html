@@ -1,158 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Quem é Jeiel Miranda?">
-    <meta name="keywords" content="Jeiel Miranda, Jeiel Lima Miranda">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Jeiel Miranda">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - Luiz Eduardo Dario de Araujo</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs 
-   
-/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Estilo Neon LED com animação */
-        .neon-card {
-            background: #014976;
-            border: 2px solid #014976;
-            /*animation: neonGlow 3s infinite alternate;*/
-        }
+  <meta charset="UTF-8">
+  <title>Apresentação Markdown</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    margin: 40px;
+  }
 
-        @keyframes neonGlow {
-            0% {
-                box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-                border-color: #ffffff;
-                /* Ciano */
-            }
+  #content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+  }
 
-            50% {
-                box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-                border-color: #ffffff;
-                /* Magenta */
-            }
+  #content a {
+    color: #00BFFF;
+    text-decoration: underline;
+  }
 
-            100% {
-                box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-                border-color: #ffffff;
-                /* Verde Neon */
-            }
-        }
+  #content a:hover {
+    color: #1E90FF;
+  }
 
-        .neon-text {
-            color: #fff;
-            text-shadow: 0 0 5px #014976, 0 0 10px #014976;
-        }
+  #content h1, #content h2, #content h3 {
+    color: #FFFFFF;
+    text-shadow: 0px 0px 5px #00BFFF;
+  }
 
-        .neon-icon {
-            color: #014976;
-            text-shadow: 0 0 5px #ffffff;
-        }
-    </style>
+  #content hr {
+    border: 1px solid #333333;
+  }
+
+  #content blockquote {
+    border-left: 4px solid #00BFFF;
+    padding-left: 15px;
+    color: #CCCCCC;
+    margin: 20px 0;
+  }
+
+  #content code, #content pre {
+    background-color: #1b1b1b;
+    color: #ADFF2F;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block;
+    overflow-x: auto;
+  }
+</style>
+
 </head>
+<body>
 
-<body class="bg-gray-900 flex items-center justify-center min-h-screen">
-    <div class="neon-card rounded-lg p-6 w-full max-w-md">
-        <!-- Header do Card -->
-        <div class="flex items-center space-x-4">
-            <div
-                class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center border-2 border-cyan-400 shadow-lg">
-                <img src="https://about.me/cdn-cgi/image/q=40,dpr=2,f=auto,fit=cover,w=120,h=120,gravity=auto/https://assets.about.me/background/users/l/u/i/luiz.araujo_1744634165_22.jpg"
-                    alt="Foto de Luiz Eduardo Dario de Araujo" class="w-full h-full object-cover rounded-full">
-            </div>
-            <div>
-                <h1 class="text-2xl font-bold neon-text">Luiz Eduardo Dario de Araujo</h1>
-                <p class="text-cyan-300">44 anos / 44 years old</p>
-            </div>
-        </div>
+<div id="content">Carregando conteúdo...</div>
 
-        <!-- Seção de Sobre -->
-        <div class="mt-6" id="about-section">
-            <!-- Conteúdo será preenchido por JavaScript -->
-        </div>
+<script>
+  async function loadMarkdown() {
+    const response = await fetch('README.md');
+    const text = await response.text();
+    document.getElementById('content').innerHTML = marked.parse(text);
+  }
 
-        <!-- Habilidades -->
-        <div class="mt-6">
-            <h2 class="text-xl font-semibold neon-text flex items-center">
-                <i class="fas fa-tools mr-2 neon-icon"></i> Habilidades / Skills
-            </h2>
-            <ul class="mt-2 space-y-2 text-cyan-300">
-                <li><i class="fas fa-shield-alt mr-2 neon-icon"></i> Agile Development</li>
-                <li><i class="fas fa-code mr-2 neon-icon"></i> Software Engineering</li>
-                <li><i class="fas fa-search mr-2 neon-icon"></i> Digital Transformation</li>
-                <li><i class="fas fa-laptop-code mr-2 neon-icon"></i> Leadership</li>
-                <li><i class="fas fa-exclamation-triangle mr-2 neon-icon"></i> Systems Architecture</li>
-                <li><i class="fas fa-exclamation-triangle mr-2 neon-icon"></i> Operational Efficiency</li>
-                <li><i class="fas fa-exclamation-triangle mr-2 neon-icon"></i> Innovation</li>
-                <li><i class="fas fa-exclamation-triangle mr-2 neon-icon"></i> Cloud</li>
-                <li><i class="fas fa-exclamation-triangle mr-2 neon-icon"></i> Data-Driven</li>
-                <li><i class="fas fa-exclamation-triangle mr-2 neon-icon"></i> Strategic Management</li>
-            </ul>
-        </div>
-    </div>
+  loadMarkdown();
+</script>
 
-    <script>
-        // Detectar idioma do navegador
-        const userLang = navigator.language || navigator.userLanguage;
-        const aboutSection = document.getElementById('about-section');
-
-        // Conteúdo em português
-        const ptContent = `
-            <h2 class="text-xl font-semibold neon-text flex items-center">
-                <i class="fas fa-globe-americas mr-2 neon-icon"></i> Sobre Mim
-            </h2>
-            <p class="text-cyan-300 mt-2">
-                Profissional com mais de 20 anos de experiência em engenharia de software, tenho atuado na liderança de equipes de alto desempenho e na condução de iniciativas de transformação digital em grandes instituições financeiras. Ao longo da minha trajetória, especializei-me em gestão de produtos digitais, arquitetura de sistemas escaláveis e práticas de liderança ágil.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                Minha carreira é marcada por uma combinação sólida entre gestão estratégica, inovação e excelência técnica. Essa convergência tem possibilitado a entrega de projetos que aumentam a eficiência operacional e impulsionam o crescimento organizacional de forma sustentável.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                Atualmente, atuo como Gerente Sênior de Engenharia de Software, posição na qual já liderei times com mais de 60 profissionais. Nessa função, tenho otimizado processos, promovido a melhoria contínua e entregue soluções tecnológicas robustas, especialmente em ambientes altamente regulados e críticos.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                Entre minhas principais especialidades estão o Desenvolvimento Ágil, a Engenharia de Software, a Arquitetura Cloud, a tomada de decisões orientadas por dados (Data-Driven Decisions) e a Transformação Tecnológica. Esses pilares sustentam minha abordagem para liderar projetos complexos e entregar valor real ao negócio.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                Estou em busca de conexões e oportunidades para compartilhar conhecimento, trocar experiências e colaborar em iniciativas voltadas à inovação e à tecnologia. Se você também acredita no poder da colaboração para gerar impacto, vamos conversar?
-            </p>
-        `;
-
-        // Conteúdo em inglês
-        const enContent = `
-            <h2 class="text-xl font-semibold neon-text flex items-center">
-                <i class="fas fa-globe mr-2 neon-icon"></i> About Me
-            </h2>
-            <p class="text-cyan-300 mt-2">
-                Professional with over 20 years of experience in software engineering, I have been leading high-performing teams and driving digital transformation initiatives within major financial institutions. Throughout my career, I have specialized in digital product management, scalable systems architecture, and agile leadership practices.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                My professional journey is defined by a strong combination of strategic management, innovation, and technical excellence. This synergy has enabled the successful delivery of projects that enhance operational efficiency and foster sustainable organizational growth.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                Currently, I serve as a Senior Software Engineering Manager, a role in which I have led teams of over 60 professionals. In this capacity, I have optimized processes, promoted continuous improvement, and delivered robust technology solutions—particularly in highly regulated and mission-critical environments.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                My core areas of expertise include Agile Development, Software Engineering, Cloud Architecture, Data-Driven Decision Making, and Technological Transformation. These pillars support my approach to leading complex projects and delivering meaningful business value.
-            </p>
-            <p class="text-cyan-300 mt-2">
-                I’m looking to connect with others and explore opportunities to share knowledge, exchange experiences, and collaborate on innovation and technology initiatives. If you believe in the power of collaboration to drive impact, let’s talk!
-            </p>
-        `;
-
-        // Exibir conteúdo baseado no idioma (português por padrão, inglês se diferente)
-        if (userLang.startsWith('pt')) {
-            aboutSection.innerHTML = ptContent;
-        } else {
-            aboutSection.innerHTML = enContent;
-        }
-    </script>
 </body>
-
 </html>
